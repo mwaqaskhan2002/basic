@@ -1,4 +1,4 @@
-let someNumber = 33;
-let sringNumber = String(someNumber);
-console.log(typeof sringNumber);
-console.log(sringNumber);
+
+let gamecounter = 100;
+gamecounter++;
+console.log(gamecounter);
