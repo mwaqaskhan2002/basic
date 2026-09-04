@@ -28,10 +28,9 @@ let myObj = {
     age: 45,
     isAvenger: true,
 }
-
 const myFunction = function() {
     console.log("Hello World!");
 }
 
 console.log(typeof bigNumber); // bigint
-console.log(typeof myFunction); // object
+console.log(typeof myFunction); // function
