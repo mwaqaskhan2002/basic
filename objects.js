@@ -126,7 +126,7 @@ const obj4 = { 5: "a", 6: "b" };
 
 const obj3 = { ...obj1, ...obj2 };
 // console.log(obj3);
-// Output: { '1': 'a', '2': 'b', '3': 'a', '4': 'b' } (Modern ES6 Spread Syntax)
+// Output: { '1': 'a', '2': 'b', '3': 'a', '4': 'b' } (Modern ES6 Spread Syntax) // This is mostly uses in react states updates so use spread operatory
 
 // --- Topic 9: Array of Objects (Database Data Format) ---
 const users = [
@@ -146,6 +146,7 @@ const users = [
 
 // users[1].email
 // Value evaluation: "a@gmail.com" (Evaluated value, won't print without console.log)
+// React mein jab hum .map() chala kar UI render karte hain, toh isi Array of Objects par loop chalate hain.
 
 // --- Topic 10: Object Utility Methods (Keys, Values, Entries, hasOwnProperty) ---
 // console.log(tinderUser);
@@ -165,3 +166,22 @@ console.log(Object.entries(tinderUser));
 
 // console.log(tinderUser.hasOwnProperty('isLogged'));
 // Output: false
+
+
+// Object.assign({}, obj1, obj2) mein pehla {} kyun dete hain?
+
+// Interview Traps from Video #17
+// Object.assign({}, obj1, obj2) mein pehla {} kyun dete hain?
+
+// Answer: Target object ko initialize karne ke liye. Agar {} na dein, toh pehla object (obj1) modify/mutate ho jayega.
+
+// Object.keys() ka return type kya hota hai?
+
+// Answer: Hamesha ek Array (Strings ki format mein keys hoti hain).
+
+// Empty Object check kaise karte hain?
+
+// Plain {} par .length nahi chalta. Isliye interview mein poochte hain ke object empty hai ya nahi kaise check karenge:
+
+// Solution: Object.keys(myObj).length === 0
+
