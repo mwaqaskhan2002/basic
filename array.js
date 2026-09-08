@@ -62,3 +62,8 @@ let score3 = 300
 console.log(Array.of(score1, score2, score3));
 
 
+const fruit = ['apple', 'banana', 'orange'];
+fruit.push('grapes');
+fruit.pop('');
+
+console.log(fruit);
