@@ -87,11 +87,11 @@ undefined
 
 // --- Topic 6: Constructor / Singleton Object Definition ---
 // const tinderUser = new Object() // Singleton
-const tinderUser = {}; // Non-Singleton Literal
+// const tinderUser = {}; // Non-Singleton Literal
 
-tinderUser.id = "123abc";
-tinderUser.name = "Sammy";
-tinderUser.isLoggedIn = false;
+// tinderUser.id = "123abc";
+// tinderUser.name = "Sammy";
+// tinderUser.isLoggedIn = false;
 
 // console.log(tinderUser);
 // Output: { id: '123abc', name: 'Sammy', isLoggedIn: false }
@@ -152,13 +152,13 @@ const users = [
 // console.log(tinderUser);
 // Output: { id: '123abc', name: 'Sammy', isLoggedIn: false }
 
-console.log(Object.keys(tinderUser));
+// console.log(Object.keys(tinderUser));
 // Output: [ 'id', 'name', 'isLoggedIn' ] (Returns array of keys)
 
-console.log(Object.values(tinderUser));
+// console.log(Object.values(tinderUser));
 // Output: [ '123abc', 'Sammy', false ] (Returns array of values)
 
-console.log(Object.entries(tinderUser));
+// console.log(Object.entries(tinderUser));
 // Output: [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ] (Returns array of key-value pair arrays)
 
 // console.log(tinderUser.hasOwnProperty('isLoggedIn'));
@@ -185,3 +185,103 @@ console.log(Object.entries(tinderUser));
 
 // Solution: Object.keys(myObj).length === 0
 
+// ==========================================
+// VIDEO #18: Object de-structure and JSON API intro
+// ==========================================
+
+const course = {
+  coursename: "js in hindi",
+  price: "999",
+  courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+const {courseInstructor: instructor} = course
+// console.log(courseInstructor);
+console.log(instructor);
+
+
+// React demo for object destructuring
+// const navbar = ({company}) => {
+
+// }
+// navbar(company = "hitesh")
+
+// {
+//   "name": "hitesh",
+//   "coursename": "js in hindi",
+//   "price": "free",
+// };
+
+[
+  {},
+  {},
+  {}
+];
+
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Yasnovid",
+        "last": "Korovickiy"
+      },
+      "location": {
+        "street": {
+          "number": 1432,
+          "name": "Blagovishchenska"
+        },
+        "city": "Kovel",
+        "state": "Ternopilska",
+        "country": "Ukraine",
+        "postcode": 69025,
+        "coordinates": {
+          "latitude": "75.7252",
+          "longitude": "-111.0338"
+        },
+        "timezone": {
+          "offset": "+5:45",
+          "description": "Kathmandu"
+        }
+      },
+      "email": "yasnovid.korovickiy@example.com",
+      "login": {
+        "uuid": "f6b216ca-7a2e-487b-b43e-b78d9388272a",
+        "username": "browntiger735",
+        "password": "daniel",
+        "salt": "CQj6GCR9",
+        "md5": "7c0f880b2e465fe3a1a20617eada4c58",
+        "sha1": "3ddd7f62b90cc2d7366862834bb87d884d87bc99",
+        "sha256": "7560580c55e56287148179be6d60eb91ab0e4a4c2741294f5e2f9156e0e4dab0"
+      },
+      "dob": {
+        "date": "1972-12-21T18:58:18.369Z",
+        "age": 53
+      },
+      "registered": {
+        "date": "2012-11-23T09:20:09.476Z",
+        "age": 13
+      },
+      "phone": "(097) G55-1416",
+      "cell": "(098) J51-3424",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/86.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/86.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/86.jpg"
+      },
+      "nat": "UA"
+    }
+  ],
+  "info": {
+    "seed": "f3f9a663d1b15c01",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+};
