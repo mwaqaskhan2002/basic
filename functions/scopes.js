@@ -76,3 +76,11 @@ const addTwo = function(num) {
 
 console.log(addTwo(5)); 
 // Output: 7 (Allowed: Called AFTER function expression initialization)
+
+// Function Declaration aur Function Expression mein Hoisting ka kya farq hai?
+
+// Answer: Function Declaration ko hum uske code se pehle call kar sakte hain kyunki wo fully hoist hota hai. Function Expression ko initialization se pehle call karne par ReferenceError milta hai.
+
+// Temporal Dead Zone (TDZ) kya hota hai?
+
+// Answer: Variable creation aur uski actual initialization ke beech ke time period ko TDZ kehte hain, jisme variable access karne par error milta hai.
