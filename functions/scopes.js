@@ -1,18 +1,41 @@
-let a = 300
+// ==========================================
+// VIDEO #21: GLOBAL VS BLOCK SCOPE
+// ==========================================
+
+// --- Topic 1: Global vs Local Scope ---
+let a = 300; // Global Variable
 
 if (true) {
-    let a = 10;
-    const b = 20;
-    // var c = 30;
-    console.log("Inner:", a);
+  let a = 10; // Block Scope Variable (Shadows global 'a' inside this block)
+  const b = 20; // Block Scope Variable
+  var c = 30; // Global/Function Scoped (Leaks out of block!)
+
+  console.log("Inner: ", a);
+  // Output: Inner: 10
 }
 
-
-
-// Whatever data is written in the curly braces whether its if else loop function or even object they are called block scopes.
-
-// scope kay andar jo value hoti hai woh bahar nahi jaani chahye or dosra jo global scope hai woh kaheen bhi access hosakta hai 
-
 console.log(a);
+// Output: 300 (Global 'a' is safe, inner 'a' died inside if-block)
+
 // console.log(b);
-// console.log(c);
+// Output: ReferenceError: b is not defined (Correct behavior)
+
+console.log(c);
+// Output: 30 (DANGEROUS LEAK: 'var' ignores block scope)
+
+// --- Topic 2: Nested Scope (Closure Basics) ---
+function one() {
+  const username = "hitesh";
+
+  function two() {
+    const website = "youtube";
+    console.log(username); // Works! 'two' can access 'one's variables.
+  }
+
+  // console.log(website); // Throws Error! 'website' exists only inside 'two'
+
+  two();
+}
+
+one();
+// Output: hitesh
