@@ -1,57 +1,50 @@
+// ==========================================
+// VIDEO #23: THIS KEYWORD & ARROW FUNCTIONS
+// ==========================================
+
+// --- Topic 1: Object Context & 'this' ---
 const user = {
   username: "hitesh",
   price: 999,
-
   welcomeMessage: function () {
     console.log(`${this.username}, welcome to website`);
-
-    console.log(this);
+    console.log(this); // Prints current object
   },
 };
 
-// user.welcomeMessage()
-// user.username = "sam"
-// user.welcomeMessage()
+// user.welcomeMessage();
+// user.username = "sam";
+// user.welcomeMessage();
 
-// console.log(this);
+console.log(this);
+// Output in Node.js: {}
+// Output in Browser: Window Object
 
-// function chai(){
-//     let username = "hitesh"
-//     console.log(this.username);
-// }
-// chai()
+// --- Topic 2: 'this' inside Regular Function vs Arrow Function ---
+function chai() {
+  let username = "hitesh";
+  console.log(this.username);
+}
+// chai(); // Output: undefined
 
-// const chai = function() {
-//     let username = "hitesh";
-//     console.log(this.username);
-// }
+const chaiArrow = () => {
+  let username = "hitesh";
+  console.log(this);
+};
+// chaiArrow(); // Output: {}
 
-//Arrow Function
-// const chai = () => {
-//     let username = "hitesh";
-//     console.log(this);
-// }
-// chai()
-
-const addTwo = (num1, num2) => {
+// --- Topic 3: Explicit vs Implicit Return ---
+// Explicit Return (Requires 'return' keyword because of {})
+const addTwo1 = (num1, num2) => {
   return num1 + num2;
 };
 
-console.log(addTwo(3, 6));
+// Implicit Return (No 'return' keyword needed)
+const addTwo2 = (num1, num2) => num1 + num2;
+const addTwo3 = (num1, num2) => num1 + num2;
 
-// Implicit Return
+// Returning an Object implicitly (MUST wrap in ())
+const returnObj = () => ({ username: "hitesh" });
 
-const addTwos = (num1, num2) => (num1 + num2)
-
-console.log(addTwos(3, 6));
-
-// Agr curly braces likha to return likhna hoga lakin agr parenthesis likha to return nahi likhna hoga
-
-// Explicit Return
-
-const addOnes = (num1, num2) => ({username: "hitesh"})
-console.log(addOnes(3, 5));
-
-
-// const myArray = [2, 4, 5, 6, 9]
-// myArray.forEach()
+console.log(returnObj());
+// Output: { username: 'hitesh' }
