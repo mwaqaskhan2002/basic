@@ -11,7 +11,7 @@
 //   var c = 30; // Global/Function Scoped (Leaks out of block!)
 
 //   console.log("Inner: ", a);
-//   // Output: Inner: 10
+//   Output: Inner: 10
 // }
 
 // console.log(a);
@@ -35,11 +35,11 @@
 //     const website = "youtube";
 //     console.log(username);
 //   }
-//   // console.log(website); // Throws Error! 'website' exists only inside 'two'
+//   console.log(website); // Throws Error! 'website' exists only inside 'two'
 
-// //   two();
+//   two();
 // }
-// // one()
+// one()
 
 // if (true) {
 //     const username = "hitesh"
@@ -47,7 +47,7 @@
 //         const website = " youtube"
 //         console.log(`${username} + ${website}`);
 //     }
-//     // console.log(website);
+//     console.log(website);
 // }
 
 // console.log(username);
